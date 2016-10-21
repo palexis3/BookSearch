@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
+import android.support.v7.widget.Toolbar;
 
 import com.codepath.android.booksearch.R;
 import com.codepath.android.booksearch.adapters.BookAdapter;
@@ -38,6 +39,11 @@ public class BookListActivity extends AppCompatActivity {
         lvBooks.setAdapter(bookAdapter);
         // Fetch the data remotely
         fetchBooks("Oscar Wilde");
+        //get the toolbar from view
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //sets the toolbar to act as the ActionBar for this activity
+            setSupportActionBar(toolbar);
+
     }
 
     // Executes an API call to the OpenLibrary search endpoint, parses the results
